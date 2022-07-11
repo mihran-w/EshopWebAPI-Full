@@ -1,0 +1,14 @@
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\EshopWeb.DataLayer.csproj.AssemblyReference.cache
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\EshopWeb.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\EshopWeb.DataLayer.AssemblyInfoInputs.cache
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\EshopWeb.DataLayer.AssemblyInfo.cs
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\EshopWeb.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\bin\Debug\net6.0\EshopWeb.DataLayer.deps.json
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\bin\Debug\net6.0\EshopWeb.DataLayer.runtimeconfig.json
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\bin\Debug\net6.0\EshopWeb.DataLayer.dll
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\bin\Debug\net6.0\EshopWeb.DataLayer.pdb
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\EshopWeb.DataLayer.dll
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\refint\EshopWeb.DataLayer.dll
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\EshopWeb.DataLayer.pdb
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\EshopWeb.DataLayer.genruntimeconfig.cache
+C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb.DataLayer\obj\Debug\net6.0\ref\EshopWeb.DataLayer.dll
