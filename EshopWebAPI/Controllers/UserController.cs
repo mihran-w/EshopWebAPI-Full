@@ -41,9 +41,11 @@ namespace EshopWebAPI.Controllers
                 Password = CreateVM.Password
             };
 
+            if (CreateVM == null) return BadRequest(CreateVM);
+
+
             if (!ModelState.IsValid) return BadRequest(CreateVM);
 
-            if (CreateVM == null) return BadRequest(CreateVM);
 
             
 

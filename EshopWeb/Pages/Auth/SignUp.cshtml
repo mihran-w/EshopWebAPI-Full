@@ -8,19 +8,19 @@
     <div class="w-50 card p-4 shadow">
         <div class="mb-3">
             <label for="name" class="form-label">Your Name :</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter the First Name">
+            <input type="text" class="form-control" id="name" placeholder="Enter the First Name" required>
         </div>
         <div class="mb-3">
             <label for="family" class="form-label">Your Family :</label>
-            <input type="text" class="form-control" id="family" placeholder="Enter the Last Name">
+            <input type="text" class="form-control" id="family" placeholder="Enter the Last Name" required>
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">Username :</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter the Username">
+            <input type="text" class="form-control" id="username" placeholder="Enter the Username" required>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Your Password :</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter the Password">
+            <input type="password" class="form-control" id="password" placeholder="Enter the Password" required>
         </div>
         <div class="mb-3">
             <button class="btn btn-success" type="submit" id="SignUp">Sign Up</button>
@@ -31,33 +31,49 @@
 @section Scripts{
     <script>
 
-        $("#SignUp").click(function() {
+        $(document).ready(function() {
+            $("#SignUp").click(function() {
 
-            var model = {
-                Name: $("#name").val(),
-                Family: $("#family").val(),
-                UserName: $("#username").val(),
-                Password: $("#password").val()
-            };
+                var model = {
+                    Name: $("#name").val(),
+                    Family: $("#family").val(),
+                    UserName: $("#username").val(),
+                    Password: $("#password").val()
+                };
 
+                if ($("#name").val() == "" || $("#family").val() == "" || $("#username").val() == "" || $("#password").val() == "") {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Oops...',
+                        text: 'Please enter the field values',
+                    })
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:5236/api/user",
+                        dataType: "json",
+                        data: JSON.stringify(model),
+                        processData: false,
+                        contentType: "application/json",
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: model.Name + ' Your Account Success Created ...',
+                                confirmButtonText: "Ok",
 
-            $.ajax({
-                type: "POST",
-                url: "http://localhost:5236/api/user",
-                dataType: "json",
-                data: JSON.stringify(model),
-                processData: false,
-                contentType: "application/json",
-                success: function(response) {
-                    alert("success");
-                    location.reload();
-                },
-                error: function(err,errorThrown) {
-                    console.log(errorThrown);
+                            }).then((result)=> {
+                                if (result.isConfirmed) {
+                                    location.reload();
+                                }
+
+                            })
+                        }
+                    });
                 }
 
-            }).done(function(data) {
+
             });
         });
+
     </script>
 }
