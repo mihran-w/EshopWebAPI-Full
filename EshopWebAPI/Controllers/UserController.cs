@@ -1,6 +1,7 @@
 ﻿using EshopWeb.CoreLayer.DTOs.Users;
 using EshopWeb.CoreLayer.Utilities;
 using EshopWebAPI.Services.User;
+using EshopWebAPI.ViewModel.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,14 +31,25 @@ namespace EshopWebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CreateDto createDto)
+        public IActionResult Post([FromBody] CreateVM CreateVM)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var user = new CreateDto()
+            {
+                Name = CreateVM.Name,
+                Family = CreateVM.Family,
+                UserName = CreateVM.UserName,
+                Password = CreateVM.Password
+            };
 
-            if (createDto == null) return BadRequest(ModelState);
+            if (!ModelState.IsValid) return BadRequest(CreateVM);
 
-            _userService.CreateUser(createDto);
-            return Ok();
+            if (CreateVM == null) return BadRequest(CreateVM);
+
+            
+
+           var model = _userService.CreateUser(user);
+
+            return Ok(model);
         }
 
         [HttpPut("{id}")]

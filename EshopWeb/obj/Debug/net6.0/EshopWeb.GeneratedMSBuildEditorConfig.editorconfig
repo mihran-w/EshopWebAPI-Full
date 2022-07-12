@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\d\OneDrive\Desktop\Projcts\EshopWebAPI\EshopWebAPI\EshopWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/d/OneDrive/Desktop/Projcts/EshopWebAPI/EshopWebAPI/EshopWeb/Pages/Auth/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/d/OneDrive/Desktop/Projcts/EshopWebAPI/EshopWebAPI/EshopWeb/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

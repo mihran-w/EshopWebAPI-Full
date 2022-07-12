@@ -18,7 +18,22 @@ builder.Services.AddDbContext<MyDbContext>(Options =>
     Options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
 });
 
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy("EnableCors", b =>
+    {
+        b.AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials()
+        .SetIsOriginAllowed(hostname => true)
+        .Build();
+    });
+});
+
 var app = builder.Build();
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -26,6 +41,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("EnableCors");
 
 app.UseAuthorization();
 
