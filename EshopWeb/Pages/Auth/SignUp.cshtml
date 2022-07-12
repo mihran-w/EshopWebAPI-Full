@@ -1,0 +1,63 @@
+﻿@page
+@model EshopWeb.Pages.Auth.SignUpModel
+@{
+}
+
+<div class="container">
+    <h3 class="mb-3">Sign Up</h3>
+    <div class="w-50 card p-4 shadow">
+        <div class="mb-3">
+            <label for="name" class="form-label">Your Name :</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter the First Name">
+        </div>
+        <div class="mb-3">
+            <label for="family" class="form-label">Your Family :</label>
+            <input type="text" class="form-control" id="family" placeholder="Enter the Last Name">
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username :</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter the Username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Your Password :</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter the Password">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-success" type="submit" id="SignUp">Sign Up</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+
+        $("#SignUp").click(function() {
+
+            var model = {
+                Name: $("#name").val(),
+                Family: $("#family").val(),
+                UserName: $("#username").val(),
+                Password: $("#password").val()
+            };
+
+
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:5236/api/user",
+                dataType: "json",
+                data: JSON.stringify(model),
+                processData: false,
+                contentType: "application/json",
+                success: function(response) {
+                    alert("success");
+                    location.reload();
+                },
+                error: function(err,errorThrown) {
+                    console.log(errorThrown);
+                }
+
+            }).done(function(data) {
+            });
+        });
+    </script>
+}
