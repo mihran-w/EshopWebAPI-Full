@@ -1,0 +1,114 @@
+﻿@page
+@model EshopWeb.Pages.Create_ProductModel
+@{
+}
+
+
+<div class="container">
+    <button type="button" class="btn btn-success my-3" data-bs-toggle="modal" data-bs-target="#CreateProduct">
+        Create New Product
+    </button>
+    <div class="row">
+        <table class="ms-4">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+            <tbody id="tb">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="CreateProduct" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Titile</label>
+                    <input type="text" class="form-control" id="title" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label for="des" class="form-label">Description</label>
+                    <textarea class="form-control" id="des" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Product Price</label>
+                    <input type="number" class="form-control" id="price" placeholder="Product Price">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Product Image</label>
+                    <input type="file" class="form-control" id="image" placeholder="Product Image">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="sendData" data-bs-dismiss="modal">Create</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+    {
+    <script>
+        $(function() {
+            //$.getJSON("http://localhost:5236/api/user",
+            //    function(data) {
+            //        $.each(data, function(i, item) {
+            //            var append = "<tr>" +
+            //                "<td>" + item.title + "</td>" +
+            //                "<td>" + item.description + "</td>" +
+            //                "<td>" + item.price + "</td>" +
+            //                "<td> <img src='/images/products/" + item.imageName + "' style='width:90px;' /> </td>" +
+            //                "</tr>";
+            //            $("#tb").append(append).fadeIn(1000);
+            //        });
+            //    });
+
+
+
+            $("#sendData").click(function() {
+                var model = new FormData();
+                model.append("Title", $("#title").val());
+                model.append("Description", $("#des").val());
+                model.append("Price", $("#price").val());
+                model.append("ImageName", $("#image")[0].files[0]);
+
+                $.ajax({
+                    url: "http://localhost:5236/api/product",
+                    type: "POST",
+                    dataType: "json",
+                    data: model,
+                    processData: false,
+                    contentType: false,
+                    complete: function(data) {
+                        //var append = "<tr>" +
+                        //    "<td>" + data.responseJSON.title + "</td>" +
+                        //    "<td>" + data.responseJSON.description + "</td>" +
+                        //    "<td>" + data.responseJSON.price + "</td>" +
+                        //    "<td> <img src='/images/products/" + data.responseJSON.imageName + "' style='width:90px;' /> </td>" +
+                        //    "</tr>";
+                        //$("#tb").append(append).fadeIn();
+
+                        $("#title").val("");
+                        $("#price").val("");
+                        $("#des").val("");
+                    }
+                });
+            });
+        });
+
+
+    </script>
+}
