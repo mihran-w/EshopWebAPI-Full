@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hxZ4854EHlz2adxhTwK96FYtTTFCx0sYG2vUKj0RHKid1sZvKg5bvzJFTXwy6Kj2hZPx5iNstlVNU1jGK9Vztg==",
+  "dgSpecHash": "HGNRQpUzlfkIUa1cISb8wY7NlBIgdfB4QgY31rCULfbePpuw00TYjnk2D8ixJvHOMeRjRJ0YXZmbEmIhOW/a/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\d\\OneDrive\\Desktop\\Projcts\\EshopWebAPI\\EshopWebAPI\\EshopWeb.CoreLayer\\EshopWeb.CoreLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\d\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.6\\microsoft.entityframeworkcore.6.0.6.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.6\\microsoft.entityframeworkcore.abstractions.6.0.6.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.6\\microsoft.entityframeworkcore.analyzers.6.0.6.nupkg.sha512",
@@ -17,6 +18,7 @@
     "C:\\Users\\d\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\d\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "aBmbbVHjF6K3eeT67mH6JzfUbBH93x1G3yyIrG2i74Q=",
+  "Hash": "6WZ9SMplw4FskMP+VyaSPEigKYvoQYETSFAvl/hiiJ8=",
   "Source": "EshopWebAPI",
   "BasePath": "_content/EshopWebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EshopWebAPI\\wwwroot",
+      "Source": "EshopWebAPI",
+      "ContentRoot": "C:\\Users\\d\\OneDrive\\Desktop\\Projcts\\EshopWebAPI\\EshopWebAPI\\EshopWebAPI\\wwwroot\\",
+      "BasePath": "_content/EshopWebAPI",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

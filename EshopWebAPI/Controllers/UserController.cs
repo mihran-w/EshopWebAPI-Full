@@ -31,23 +31,21 @@ namespace EshopWebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CreateVM CreateVM)
+        public IActionResult Post([FromBody] CreateUserVM createUserVM)
         {
             var user = new CreateDto()
             {
-                Name = CreateVM.Name,
-                Family = CreateVM.Family,
-                UserName = CreateVM.UserName,
-                Password = CreateVM.Password
+                Name = createUserVM.Name,
+                Family = createUserVM.Family,
+                UserName = createUserVM.UserName,
+                Password = createUserVM.Password
             };
 
-            if (CreateVM == null) return BadRequest(CreateVM);
+            if (createUserVM == null) return BadRequest(createUserVM);
 
 
-            if (!ModelState.IsValid) return BadRequest(CreateVM);
+            if (!ModelState.IsValid) return BadRequest(createUserVM);
 
-
-            
 
            var model = _userService.CreateUser(user);
 

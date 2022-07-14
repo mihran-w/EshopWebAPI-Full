@@ -1,4 +1,5 @@
 using EshopWebAPI.Context;
+using EshopWebAPI.Services.Product;
 using EshopWebAPI.Services.User;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
