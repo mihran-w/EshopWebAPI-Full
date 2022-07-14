@@ -28,12 +28,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New Product</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="title" class="form-label">Titile</label>
+                    <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" id="title" placeholder="">
                 </div>
                 <div class="mb-3">
@@ -41,12 +41,12 @@
                     <textarea class="form-control" id="des" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="price" class="form-label">Product Price</label>
-                    <input type="number" class="form-control" id="price" placeholder="Product Price">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" placeholder="">
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Product Image</label>
-                    <input type="file" class="form-control" id="image" placeholder="Product Image">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="image">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -76,8 +76,6 @@
                     });
                 });
 
-
-
             $("#sendData").click(function() {
                 var model = new FormData();
 
@@ -89,28 +87,51 @@
                 model.append("ImageName", $("#image")[0].files[0]);
 
 
-                $.ajax({
-                    url: "http://localhost:5236/api/product",
-                    type: "POST",
-                    dataType: "json",
-                    data: model,
-                    processData: false,
-                    contentType: false,
-                    complete: function(data) {
-                        console.log(data);
-                        //var append = "<tr>" +
-                        //    "<td>" + data.responseJSON.title + "</td>" +
-                        //    "<td>" + data.responseJSON.description + "</td>" +
-                        //    "<td>" + data.responseJSON.price + "</td>" +
-                        //    "<td> <img src='/images/products/" + data.responseJSON.imageName + "' style='width:90px;' /> </td>" +
-                        //    "</tr>";
-                        //$("#tb").append(append).fadeIn();
+                if ($("#title").val() == "" || $("#des").val() == "" || $("#price").val() == "" || $("#image")[0].files[0] == null) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Oops...',
+                        text: 'Please enter the field values',
+                    })
+                } else {
+                    $.ajax({
+                        url: "http://localhost:5236/api/product",
+                        type: "POST",
+                        dataType: "json",
+                        data: model,
+                        processData: false,
+                        contentType: false,
+                        success: function() {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'New Product Success Created ...',
+                                confirmButtonText: "Ok",
 
-                        $("#title").val("");
-                        $("#price").val("");
-                        $("#des").val("");
-                    }
-                });
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.reload();
+                                }
+
+                            })
+                        },
+                        complete: function(data) {
+                            var append = "<tr>" +
+                                "<td>" + data.responseJSON.title + "</td>" +
+                                "<td>" + data.responseJSON.description + "</td>" +
+                                "<td>" + data.responseJSON.price + "</td>" +
+                                "<td> <img src='/images/products/" + data.responseJSON.imageName + "' style='width:90px;' /> </td>" +
+                                "</tr>";
+                            $("#tb").append(append).fadeIn();
+
+                            $("#title").val("");
+                            $("#price").val("");
+                            $("#des").val("");
+                            $("#image").val("");
+
+                        }
+                    });
+                }
+
             });
         });
 
