@@ -37,24 +37,32 @@ namespace EshopWebAPI.Controllers
             var data = HttpContext.Request.Form;
             var dic = Request.Form.ToDictionary(x => x.Key, x => x.Value.ToString());
 
-            var product = new CreateDto();
+            var product = new CreateVM();
             foreach (var kvp in dic.Keys)
             {
                 PropertyInfo pi = product.GetType().GetProperty(kvp, BindingFlags.Public | BindingFlags.Instance);
+                
                 if (pi != null)
                 {
                     pi.SetValue(product, dic[kvp], null);
                 }
-
-                if (data.Files.Count > 0)
-                {
-                    IFormFile img = data.Files[0];
-                    product.ImageFile = img;
-                }
-
             }
 
-            await _productService.CreateProduct(product);
+            if (data.Files.Count > 0)
+            {
+                IFormFile img = data.Files[0];
+                product.ImageFile = img;
+            }
+
+            var model = new CreateDto()
+            {
+                Title = product.Title,
+                Description = product.Description,
+                Price = Int32.Parse(product.Price),
+                ImageFile = product.ImageFile,
+            };
+
+            await _productService.CreateProduct(model);
 
             return Ok(product);
         }

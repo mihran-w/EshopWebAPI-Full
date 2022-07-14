@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6WZ9SMplw4FskMP+VyaSPEigKYvoQYETSFAvl/hiiJ8=",
+  "Hash": "PsOfSjiSQOGSf2JDMaYO62DF9MvNS+DGHQTiXj//ApA=",
   "Source": "EshopWebAPI",
   "BasePath": "_content/EshopWebAPI",
   "Mode": "Default",
@@ -15,5 +15,57 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\d\\OneDrive\\Desktop\\Projcts\\EshopWebAPI\\EshopWebAPI\\EshopWebAPI\\wwwroot\\Images\\Product\\5c549cba-b93e-4227-b709-1b6faf294a76profile.jpeg",
+      "SourceId": "EshopWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\d\\OneDrive\\Desktop\\Projcts\\EshopWebAPI\\EshopWebAPI\\EshopWebAPI\\wwwroot\\",
+      "BasePath": "_content/EshopWebAPI",
+      "RelativePath": "Images/Product/5c549cba-b93e-4227-b709-1b6faf294a76profile.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Product\\5c549cba-b93e-4227-b709-1b6faf294a76profile.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\d\\OneDrive\\Desktop\\Projcts\\EshopWebAPI\\EshopWebAPI\\EshopWebAPI\\wwwroot\\Images\\Product\\68cb4c47-03d2-4c63-b4f0-980090a41c95profile.jpeg",
+      "SourceId": "EshopWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\d\\OneDrive\\Desktop\\Projcts\\EshopWebAPI\\EshopWebAPI\\EshopWebAPI\\wwwroot\\",
+      "BasePath": "_content/EshopWebAPI",
+      "RelativePath": "Images/Product/68cb4c47-03d2-4c63-b4f0-980090a41c95profile.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Product\\68cb4c47-03d2-4c63-b4f0-980090a41c95profile.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\d\\OneDrive\\Desktop\\Projcts\\EshopWebAPI\\EshopWebAPI\\EshopWebAPI\\wwwroot\\Images\\Product\\c5e5f30a-485f-410d-906e-921ddae28da3profile.jpeg",
+      "SourceId": "EshopWebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\d\\OneDrive\\Desktop\\Projcts\\EshopWebAPI\\EshopWebAPI\\EshopWebAPI\\wwwroot\\",
+      "BasePath": "_content/EshopWebAPI",
+      "RelativePath": "Images/Product/c5e5f30a-485f-410d-906e-921ddae28da3profile.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Product\\c5e5f30a-485f-410d-906e-921ddae28da3profile.jpeg"
+    }
+  ]
 }

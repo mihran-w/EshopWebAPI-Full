@@ -8,6 +8,6 @@ namespace EshopWeb.CoreLayer.Utilities
 {
     public class PathDirectories
     {
-        public const string ProductImage = "wwwroot/Image/Product";
+        public const string ProductImage = "wwwroot/Images/Product";
     }
 }

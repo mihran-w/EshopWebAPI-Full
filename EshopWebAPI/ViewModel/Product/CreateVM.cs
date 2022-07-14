@@ -12,7 +12,7 @@ namespace EshopWebAPI.ViewModel.Product
         public string Description { get; set; }
         [Display(Name = "قیمت محصول")]
         [Required(ErrorMessage = "وارد کردن {} الزامیست")]
-        public int Price { get; set; }
+        public string Price { get; set; }
         [Display(Name = "تصویر محصول")]
         [Required(ErrorMessage = "وارد کردن {} الزامیست")]
         public IFormFile ImageFile { get; set; }

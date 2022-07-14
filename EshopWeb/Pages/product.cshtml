@@ -63,27 +63,31 @@
     {
     <script>
         $(function() {
-            //$.getJSON("http://localhost:5236/api/user",
-            //    function(data) {
-            //        $.each(data, function(i, item) {
-            //            var append = "<tr>" +
-            //                "<td>" + item.title + "</td>" +
-            //                "<td>" + item.description + "</td>" +
-            //                "<td>" + item.price + "</td>" +
-            //                "<td> <img src='/images/products/" + item.imageName + "' style='width:90px;' /> </td>" +
-            //                "</tr>";
-            //            $("#tb").append(append).fadeIn(1000);
-            //        });
-            //    });
+            $.getJSON("http://localhost:5236/api/product",
+                function(data) {
+                    $.each(data, function(i, item) {
+                        var append = "<tr>" +
+                            "<td>" + item.title + "</td>" +
+                            "<td>" + item.description + "</td>" +
+                            "<td>" + item.price + "</td>" +
+                            "<td> <img src='/images/products/" + item.ImageName + "' style='width:90px;' /> </td>" +
+                            "</tr>";
+                        $("#tb").append(append).fadeIn(1000);
+                    });
+                });
 
 
 
             $("#sendData").click(function() {
                 var model = new FormData();
+
+                var x = document.getElementById("price").value;
+
                 model.append("Title", $("#title").val());
                 model.append("Description", $("#des").val());
-                model.append("Price", $("#price").val());
+                model.append("Price", x.toString());
                 model.append("ImageName", $("#image")[0].files[0]);
+
 
                 $.ajax({
                     url: "http://localhost:5236/api/product",
@@ -93,6 +97,7 @@
                     processData: false,
                     contentType: false,
                     complete: function(data) {
+                        console.log(data);
                         //var append = "<tr>" +
                         //    "<td>" + data.responseJSON.title + "</td>" +
                         //    "<td>" + data.responseJSON.description + "</td>" +

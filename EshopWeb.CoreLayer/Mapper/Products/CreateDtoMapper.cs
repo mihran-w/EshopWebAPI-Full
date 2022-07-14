@@ -17,7 +17,6 @@ namespace EshopWeb.CoreLayer.Mapper.Products
                 Title = CreateDto.Title,
                 Description = CreateDto.Description,
                 Price = CreateDto.Price,
-                ImageName = CreateDto.ImageFile.FileName
             };
         }
     }

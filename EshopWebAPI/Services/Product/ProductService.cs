@@ -2,15 +2,18 @@
 using EshopWeb.CoreLayer.Mapper.Products;
 using EshopWeb.CoreLayer.Utilities;
 using EshopWebAPI.Context;
+using EshopWebAPI.Services.FileManager;
 
 namespace EshopWebAPI.Services.Product
 {
     public class ProductService : IProductService
     {
         private readonly MyDbContext _context;
-        public ProductService(MyDbContext context)
+        private readonly IFileManager _fileManager;
+        public ProductService(MyDbContext context, IFileManager fileManager)
         {
             _context = context;
+            _fileManager = fileManager;
         }
 
         public List<ProductDto> GetAllProduct()
@@ -31,12 +34,7 @@ namespace EshopWebAPI.Services.Product
 
             var product = CreateDtoMapper.Map(createDto);
 
-            if (createDto.ImageFile != null)
-            {
-                string savePath = Path.Combine(Directory.GetCurrentDirectory(), PathDirectories.ProductImage, createDto.ImageFile.FileName);
-                using var fs = new FileStream(savePath, FileMode.Create);
-                createDto.ImageFile.CopyTo(fs);
-            }
+            product.ImageName = _fileManager.SaveFile(createDto.ImageFile, PathDirectories.ProductImage);
 
             await _context.products.AddAsync(product);
             await _context.SaveChangesAsync();
